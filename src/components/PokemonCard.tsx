@@ -1,20 +1,17 @@
 import "../style/pokemon.css";
 
-interface CardI {
+interface pokemon {
   name: string;
-  image: string;
+  imgSrc?: string;
 }
 
-function PokemonCard({ pokemon }: CardI) {
+function PokemonCard({ name, imgSrc }: pokemon) {
   return (
     <figure>
-      {pokemon.imgSrc ? (
-        <img className="imagePoke" src={pokemon.imgSrc} />
-      ) : (
-        <p>???</p>
-      )}
-      <figcaption className="figPoke">{pokemon.name}</figcaption>
+      {imgSrc ? <img className="imagePoke" src={imgSrc} /> : <p>???</p>}
+      <figcaption className="figPoke">{name}</figcaption>
     </figure>
   );
 }
+
 export default PokemonCard;
