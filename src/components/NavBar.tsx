@@ -33,4 +33,4 @@ function Navbar({ pokemonIndex, pokemonList, plus, moins }: NavBarProps) {
   );
 }
 
-export default Navbar;
+// export default Navbar;
