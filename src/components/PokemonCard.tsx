@@ -1,17 +1,15 @@
-import "../style/pokemon.css";
-
-interface pokemon {
+interface pokemonI {
+  imgSrc: string | undefined;
   name: string;
-  imgSrc?: string;
 }
 
-function PokemonCard({ name, imgSrc }: pokemon) {
+export default function PokemonCard({ name, imgSrc }: pokemonI) {
   return (
-    <figure>
-      {imgSrc ? <img className="imagePoke" src={imgSrc} /> : <p>???</p>}
-      <figcaption className="figPoke">{name}</figcaption>
-    </figure>
+    <>
+      <figure>
+        {imgSrc ? <img src={imgSrc} /> : <p> ??? </p>}
+        <figcaption>{name}</figcaption>
+      </figure>
+    </>
   );
 }
-
-export default PokemonCard;
