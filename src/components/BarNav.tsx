@@ -8,16 +8,21 @@ interface Pokemon {
 interface NavBarProps {
   setPokemonIndex: (index: number) => void;
   pokemonList: Pokemon[];
+  pokemonIndex: number;
 }
 
-export default function Navbar({ pokemonList, setPokemonIndex }: NavBarProps) {
+export default function Navbar({
+  pokemonIndex,
+  pokemonList,
+  setPokemonIndex,
+}: NavBarProps) {
   const selectPokemon = (index) => {
     setPokemonIndex(index);
   };
 
   useEffect(() => {
     alert("Pika Pikachu!!! ");
-  }, [pokemonList[3][0]]);
+  }, [pokemonList[pokemonIndex]?.name.toLowerCase() === "pikachu"]);
 
   return (
     <>

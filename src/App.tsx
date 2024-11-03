@@ -35,12 +35,16 @@ export default function App() {
   const [pokemonIndex, setPokemonIndex] = useState(0);
 
   useEffect(() => {
-    alert("Hello Pokemon Trainer ! ");
-  }, [pokemonList[0][0]]);
+    alert("hello pokemon trainer :)");
+  }, []);
 
   return (
     <div>
-      <Navbar pokemonList={pokemonList} setPokemonIndex={setPokemonIndex} />
+      <Navbar
+        pokemonIndex={pokemonIndex}
+        pokemonList={pokemonList}
+        setPokemonIndex={setPokemonIndex}
+      />
       <PokemonCard
         name={pokemonList[pokemonIndex].name}
         imgSrc={pokemonList[pokemonIndex].imgSrc}
