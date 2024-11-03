@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 interface Pokemon {
   name: string;
   imgSrc?: string;
@@ -12,6 +14,10 @@ export default function Navbar({ pokemonList, setPokemonIndex }: NavBarProps) {
   const selectPokemon = (index) => {
     setPokemonIndex(index);
   };
+
+  useEffect(() => {
+    alert("Pika Pikachu!!! ");
+  }, [pokemonList[3][0]]);
 
   return (
     <>
